@@ -149,7 +149,7 @@ class ConnectionTest extends TestCase
     {
         $conn = $this->connection->getWrappedConnection();
         if ($conn instanceof ServerInfoAwareConnection) {
-            $pattern = '/(^[0-9]+.[0-9]+.[0-9]+(.[0-9]$|$))/mi';
+            $pattern = '/(^[0-9]+.[0-9]+.[0-9]+(.[0-9]+$|$))/mi';
             if (method_exists($this, 'assertMatchesRegularExpression')) {
                 $this->assertMatchesRegularExpression($pattern, $conn->getServerVersion());
             } else {
